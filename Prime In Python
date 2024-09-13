@@ -1,0 +1,18 @@
+def IsPrime():
+    Number = int(input("Enter Your Number: "))
+  
+    Prime = str(Number / 2)
+    
+        
+    print(Prime)
+    
+    Decimal = ".5"
+    if Decimal in Prime:
+        print("Your Number Is A Prime")
+    else:
+        print("Your number Is Not A Prime")
+        
+IsPrime()
+       
+
+
