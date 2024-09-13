@@ -1,18 +1,15 @@
-def IsPrime():
-    Number = int(input("Enter Your Number: "))
+def IsPrime(): # Function block created to call back at the end.
+    Number = int(input("Enter Your Number: ")) # Asks user for it's number.
   
-    Prime = str(Number / 2)
+    Prime = str(Number / 2) # Divides the user's number by 2.
     
         
-    print(Prime)
+    print(Prime) # Prints the divided number.
     
-    Decimal = ".5"
-    if Decimal in Prime:
+    Decimal = ".5" # A variable to detect if there is a number ending with ".5" in the user's output.
+    if Decimal in Prime: # A if statement, where if it is a prime number, it prints "Your number Is A Prime", if not it prints, "Your Number Is Not A Prime").
         print("Your Number Is A Prime")
     else:
         print("Your number Is Not A Prime")
         
-IsPrime()
-       
-
-
+IsPrime() # Called back the function to print the output.
