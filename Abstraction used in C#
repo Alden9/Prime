@@ -1,0 +1,27 @@
+using System; // Gets system from library.
+
+class RectangleAreaCalculator // Variable for RectangleAreaCalCulator
+{
+    static void Main(string[] args) // Main is to start and void is to return back everything.
+    {
+        double length; // a variable that holds the length 
+        double width; // a variable that holds the length
+
+
+        Console.WriteLine("Enter the length of your rectangle: "); // Asks the user's input of the length of the rectangle.
+        length = Convert.ToDouble(Console.ReadLine()); // Converts a decimal number to a precise float
+
+        Console.WriteLine("Enter the width of your rectangle: "); // Asks the user's input of the width of the rectangle.
+        width = Convert.ToDouble(Console.ReadLine()); // Converts a decimal number to a precise float
+
+        double area = CalculateArea(length, width); // Calls the method in order to calculate the area.
+
+        Console.WriteLine($"The area of the rectangle is: {area}"); // Displays the calculated area
+    }
+
+
+    static double CalculateArea(double length, double width) // Function that can be reused.
+    {
+        return length * width; // Returns the calucalated area.
+    }
+}       
