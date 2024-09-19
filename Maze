@@ -1,0 +1,67 @@
+lives = 3 # variable to give player lives.
+score = 0 # variable to set the score.
+player_x, player_y = 0, 0 # spawns on the player in 0, 0 coordinates
+
+
+
+def display_status():  # function
+    print(f"lives ;{lives}")
+    print(f"score ;{score}")
+    print(f"player position : ({player_x}, {player_y})")
+    print(f"-" * 20)
+    
+def move_player(direction):
+    
+    global player_x, player_y
+    if direction == "up":
+        player_y += 1
+    elif direction == "down":
+        player_y -= 1
+    elif direction == "left":
+        player_y -= 1
+    elif direction == "right":
+        player_y += 1
+    else:
+        print("invalid move")
+        
+def lose_life():
+    global lives
+    if lives > 0:
+        lives -= 1
+        print("You lost a life")
+    elif lives == 0:
+        print("You lost")
+        
+
+def gain_score(points):
+    global score
+    score += points
+    print(f"You gained {points} points!")
+    
+print("Game is starting.")
+display_status()
+
+move_player("up")
+display_status()
+
+gain_score(5)
+display_status()
+
+lose_life()
+display_status()
+
+move_player("right")
+display_status()
+
+gain_score(10)
+display_status()
+
+lose_life()
+display_status()
+
+
+while lives != 0 and score != 0:
+    input("Move to any direction: ")
+
+    move_player("up")
+    move_player("right")
