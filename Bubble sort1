@@ -1,21 +1,20 @@
-def bubble_sort(arr):
-    n = len(arr)
-    for i in range(n):
-        for j in range(0, n-i-j):
-            if arr[j] > arr[j+1]:
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-               
-    return arr
+def sorting(array): # Creates a function that can be called with array
+    m = len(array) # has a function that adds the numbers in an object
+    for i in range(m): # for loop that stops until it reaches m (the array)
+        for j in range(0, m-i-1): # another for loop that stops until the j equals m-i-1
+            if array[j] > array[j + 1]: # checks if the j is bigger than j + 1
+                array[j], array[j+1] = array[j+1], array[j] # changes the value of j and j+1 by swapping them
+                return array # returns the value back to array
+            
+def userin(): # a function for the user's input
+    userinput = input('Enter The Numbers: ') # asks for the user's input
+    array = list(map(int, userinput.split())) # creates an array with a list of the user input and splits the string into a list
+    return array # returns the value back to the array var
 
-def get_user_input():
-    user_input = input("Enter numbers separated by spaces: ")
-    arr = list(map(int, user_input.split()))
-    return arr
-
-def main():
-    arr = get_user_input()
-    sorted_arr = bubble_sort(arr)
-    print("Sorted arry: ", sorted_arr)
+def main(): # another function for the output
+    array = userin() # makes the array data equal the user input function
+    newarray = sorting(array) # makes the array sorted
+    print('The Numbers Have Been Sorted, The Results Are Here: ', newarray) #outputs the answer
     
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__': # checks if the name is 'main'
+    main() # recalls the main output function
