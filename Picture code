@@ -1,0 +1,61 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Crazy
+{
+    public partial class Form1 : Form
+    {
+        private Image[] images;
+        public Form1()
+        {
+            InitializeComponent();
+            LoadImages();
+        }
+
+        private void LoadImages()
+        {
+            images = new Image[]
+                {
+                    Image.FromFile("C:\\Users\\40239006\\Downloads\\image tiger.jpeg")
+                };
+        }
+
+        private void btnSelectImage_Click(object sender, EventArgs e)
+        {
+            using (Form selectionForm = new Form())
+            {
+                ComboBox comboBox = new ComboBox { Dock = DockStyle.Fill };
+                foreach (var img in images)
+                {
+                    comboBox.Items.Add(img.ToString());
+                }
+                selectionForm.Controls.Add(comboBox);
+                Button selectButton = new Button { Text = "Select", Dock = DockStyle.Bottom };
+                selectionForm.Click += (s, args) =>
+                {
+                    if (comboBox.SelectedIndex != -1)
+                    {
+                        pictureBox.Image = images[comboBox.SelectedIndex];
+                        selectionForm.Close();
+                    }
+                };
+                selectionForm.Controls.Add(selectButton);
+                selectionForm.ShowDialog();
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
+
+
