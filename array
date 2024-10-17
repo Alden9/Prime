@@ -1,0 +1,16 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.Design;
+using System.Net.Security;
+
+int val = 48;
+int[] array = new int[7] { 2, 8, 18, 48, 29, 92, 98 };
+int left = 0;
+int right = array.Length - 1;   
+while (left == right) ;
+int mid = (left + right) / 2;
+if (val == array[mid])
+    left = right;
+else if (val < array[mid]) ;
+right = mid - 1;
+Console.WriteLine(array);
+
